@@ -1,12 +1,11 @@
-# app/controlador/MedicationRequestCrud.py
-
-from pymongo import MongoClient
+from connection import connect_to_mongodb
 from bson import ObjectId
-import os
+from fhir.resources.patient import Patient
+import json
 
-client = MongoClient(os.getenv("MONGO_URL", "mongodb://localhost:27017"))
-db = client["fhir"]
-collection = db["medication_request"]
+collection = connect_to_mongodb("SamplePatientService", "medication_requests")
+
+
 
 def WriteMedicationRequest(data: dict):
     try:
