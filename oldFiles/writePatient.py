@@ -90,10 +90,10 @@ if __name__ == "__main__":
     }
     '''
 
-    # Guardar el JSON en MongoDB
+   # Guardar el JSON en MongoDB
     inserted_id = save_patient_to_mongodb(patient_json, collection)
 
     if inserted_id:
         print(f"Paciente guardado con ID: {inserted_id}")
     else:
-        print("No se pudo guardar el paciente.")
+        print("No se pudo guardar el paciente.") 
